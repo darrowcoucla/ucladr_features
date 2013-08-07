@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * basic_site_features.views_default.inc
+ * ucladr_features.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function basic_site_features_views_default_views() {
+function ucladr_features_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -45,7 +45,7 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['field_creator_name']['label'] = '';
   $handler->display->display_options['fields']['field_creator_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_creator_name']['element_label_colon'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Description of Data */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -184,7 +184,7 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['nothing_7']['label'] = 'corporate';
   $handler->display->display_options['fields']['nothing_7']['alter']['text'] = '[field_institution_department]';
   $handler->display->display_options['fields']['nothing_7']['element_label_colon'] = FALSE;
-  /* Field: Content: Funding Agency */
+  /* Field: Content: Funding Agency (example: NSF, NIH, NOAA, or any other funder) */
   $handler->display->display_options['fields']['field_funding_agency']['id'] = 'field_funding_agency';
   $handler->display->display_options['fields']['field_funding_agency']['table'] = 'field_data_field_funding_agency';
   $handler->display->display_options['fields']['field_funding_agency']['field'] = 'field_funding_agency';
@@ -199,7 +199,7 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = 'corporate';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_funding_agency]|displayForm;;funding agency|roleTerm';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Content: Data Format/File Type */
+  /* Field: Content: Data Format/File Type (example: .jpg .xls, .txt) */
   $handler->display->display_options['fields']['field_data_format_type']['id'] = 'field_data_format_type';
   $handler->display->display_options['fields']['field_data_format_type']['table'] = 'field_data_field_data_format_type';
   $handler->display->display_options['fields']['field_data_format_type']['field'] = 'field_data_format_type';
@@ -215,13 +215,7 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['nothing_4']['label'] = 'originInfo';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '[field_date_of_collection]|dateCreated';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
-  /* Field: Content: Short Description */
-  $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
-  $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
-  $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';
-  $handler->display->display_options['fields']['field_short_description']['label'] = 'note';
-  $handler->display->display_options['fields']['field_short_description']['element_label_colon'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Description of Data */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -229,7 +223,7 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['field_description']['alter']['text'] = '[field_creator_name] / [field_description] ';
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Field: Content: Keywords */
+  /* Field: Content: Keywords that describe the project or data */
   $handler->display->display_options['fields']['field_keywords']['id'] = 'field_keywords';
   $handler->display->display_options['fields']['field_keywords']['table'] = 'field_data_field_keywords';
   $handler->display->display_options['fields']['field_keywords']['field'] = 'field_keywords';
@@ -276,7 +270,15 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['field_prog_to_open_data']['label'] = 'note';
   $handler->display->display_options['fields']['field_prog_to_open_data']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_prog_to_open_data']['alter']['text'] = 'Programs needed to open the data: [field_prog_to_open_data]';
-  /* Field: Content: Sharing Attributes */
+  /* Field: Content: Data Collection Methods */
+  $handler->display->display_options['fields']['field_data_collection_methods']['id'] = 'field_data_collection_methods';
+  $handler->display->display_options['fields']['field_data_collection_methods']['table'] = 'field_data_field_data_collection_methods';
+  $handler->display->display_options['fields']['field_data_collection_methods']['field'] = 'field_data_collection_methods';
+  $handler->display->display_options['fields']['field_data_collection_methods']['label'] = 'note';
+  $handler->display->display_options['fields']['field_data_collection_methods']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_data_collection_methods']['alter']['text'] = 'Data Collection Methods: [field_data_collection_methods]';
+  $handler->display->display_options['fields']['field_data_collection_methods']['element_label_colon'] = FALSE;
+  /* Field: Content: Is this Data Shareable? */
   $handler->display->display_options['fields']['field_sharing_attributes']['id'] = 'field_sharing_attributes';
   $handler->display->display_options['fields']['field_sharing_attributes']['table'] = 'field_data_field_sharing_attributes';
   $handler->display->display_options['fields']['field_sharing_attributes']['field'] = 'field_sharing_attributes';
@@ -365,7 +367,7 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['field_creator_name']['label'] = '';
   $handler->display->display_options['fields']['field_creator_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_creator_name']['element_label_colon'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Description of Data */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -441,7 +443,7 @@ function basic_site_features_views_default_views() {
   $handler->display->display_options['fields']['field_creator_name']['label'] = '';
   $handler->display->display_options['fields']['field_creator_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_creator_name']['element_label_colon'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Description of Data */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';

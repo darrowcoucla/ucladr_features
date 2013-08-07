@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * basic_site_features.features.user_permission.inc
+ * ucladr_features.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function basic_site_features_user_default_permissions() {
+function ucladr_features_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: access site-wide contact form.
@@ -26,6 +26,7 @@ function basic_site_features_user_default_permissions() {
     'name' => 'create data content',
     'roles' => array(
       0 => 'authenticated user',
+      1 => 'data_registry',
     ),
     'module' => 'node',
   );
@@ -35,6 +36,7 @@ function basic_site_features_user_default_permissions() {
     'name' => 'delete own data content',
     'roles' => array(
       0 => 'authenticated user',
+      1 => 'data_registry',
     ),
     'module' => 'node',
   );
@@ -44,6 +46,7 @@ function basic_site_features_user_default_permissions() {
     'name' => 'edit own data content',
     'roles' => array(
       0 => 'authenticated user',
+      1 => 'data_registry',
     ),
     'module' => 'node',
   );

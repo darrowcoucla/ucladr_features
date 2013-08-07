@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * basic_site_features.features.field.inc
+ * ucladr_features.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function basic_site_features_field_default_fields() {
+function ucladr_features_field_default_fields() {
   $fields = array();
 
   // Exported field: 'field_collection_item-field_contact_info-field_contact_email'.
@@ -270,7 +270,7 @@ function basic_site_features_field_default_fields() {
   $fields['node-data-body'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(
         0 => 'node',
@@ -320,7 +320,7 @@ function basic_site_features_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Long description',
+      'label' => 'Description or Abstract of the Project',
       'required' => 0,
       'settings' => array(
         'display_summary' => 1,
@@ -335,7 +335,7 @@ function basic_site_features_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '19',
+        'weight' => '5',
       ),
     ),
   );
@@ -386,7 +386,7 @@ function basic_site_features_field_default_fields() {
         'module' => 'field_collection',
         'settings' => array(),
         'type' => 'field_collection_embed',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -460,6 +460,67 @@ function basic_site_features_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-data-field_data_collection_methods'.
+  $fields['node-data-field_data_collection_methods'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_data_collection_methods',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'data',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '14',
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_data_collection_methods',
+      'label' => 'Data Collection Methods',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'node-data-field_data_format_type'.
   $fields['node-data-field_data_format_type'] = array(
     'field_config' => array(
@@ -496,14 +557,7 @@ function basic_site_features_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'data',
-      'default_value' => array(
-        0 => array(
-          'tid' => 'autocreate',
-          'vid' => '1',
-          'name' => 'mixed material',
-          'vocabulary_machine_name' => 'tags',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '<em>Please enter a comma-separated list of Data Format/File Type(s).</em>',
       'display' => array(
@@ -517,7 +571,7 @@ function basic_site_features_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_data_format_type',
-      'label' => 'Data Format/File Type',
+      'label' => 'Data Format/File Type (example: .jpg .xls, .txt)',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -530,7 +584,7 @@ function basic_site_features_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -607,7 +661,7 @@ function basic_site_features_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '14',
+        'weight' => '15',
       ),
     ),
   );
@@ -738,7 +792,7 @@ function basic_site_features_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_description',
-      'label' => 'Description',
+      'label' => 'Description of Data',
       'required' => 1,
       'settings' => array(
         'text_processing' => '0',
@@ -751,7 +805,7 @@ function basic_site_features_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -812,7 +866,7 @@ function basic_site_features_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -866,7 +920,7 @@ function basic_site_features_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_funding_agency',
-      'label' => 'Funding Agency',
+      'label' => 'Funding Agency (example: NSF, NIH, NOAA, or any other funder)',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -879,7 +933,7 @@ function basic_site_features_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -985,7 +1039,7 @@ function basic_site_features_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_keywords',
-      'label' => 'Keywords',
+      'label' => 'Keywords that describe the project or data',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -998,70 +1052,7 @@ function basic_site_features_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '12',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-data-field_page_title'.
-  $fields['node-data-field_page_title'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_page_title',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'data',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'This field is used to frame the content of the page. It appears betwee the header and the content area.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '17',
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_page_title',
-      'label' => 'page_title',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '0',
+        'weight' => '13',
       ),
     ),
   );
@@ -1104,7 +1095,7 @@ function basic_site_features_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '13',
+          'weight' => '12',
         ),
       ),
       'entity_type' => 'node',
@@ -1122,7 +1113,7 @@ function basic_site_features_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -1165,7 +1156,7 @@ function basic_site_features_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '13',
         ),
       ),
       'entity_type' => 'node',
@@ -1183,7 +1174,7 @@ function basic_site_features_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '15',
+        'weight' => '16',
       ),
     ),
   );
@@ -1260,7 +1251,7 @@ function basic_site_features_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_text',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -1285,7 +1276,7 @@ function basic_site_features_field_default_fields() {
         'allowed_values' => array(
           'yes' => 'Yes',
           'no' => 'No',
-          'embargo' => 'Embargo',
+          'embargo' => 'Embargo (such as 1 year, 2 years, 6 months)',
         ),
         'allowed_values_function' => '',
       ),
@@ -1312,7 +1303,7 @@ function basic_site_features_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_sharing_attributes',
-      'label' => 'Sharing Attributes',
+      'label' => 'Is this Data Shareable?',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1322,70 +1313,7 @@ function basic_site_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-data-field_short_description'.
-  $fields['node-data-field_short_description'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_short_description',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'data',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'inline',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '14',
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_short_description',
-      'label' => 'Short Description',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '17',
+        'weight' => '10',
       ),
     ),
   );
@@ -1397,27 +1325,25 @@ function basic_site_features_field_default_fields() {
   t('<em>Please enter a comma-separated list of keyword(s).</em>');
   t('<em>Please enter a comma-separated list of programs.</em>');
   t('Contact Info');
-  t('Data Format/File Type');
+  t('Data Collection Methods');
+  t('Data Format/File Type (example: .jpg .xls, .txt)');
   t('Date of Collection');
   t('Date of Registration');
   t('Department');
-  t('Description');
+  t('Description of Data');
+  t('Description or Abstract of the Project');
   t('Email');
   t('Equipment used in data collection');
-  t('Funding Agency');
+  t('Funding Agency (example: NSF, NIH, NOAA, or any other funder)');
   t('Institution');
   t('Institution & Department');
-  t('Keywords');
+  t('Is this Data Shareable?');
+  t('Keywords that describe the project or data');
   t('Link to data');
-  t('Long description');
   t('Persons in charge of data collection');
   t('Programs needed to analyze the data');
   t('Programs needed to open the data');
-  t('Sharing Attributes');
-  t('Short Description');
-  t('This field is used to frame the content of the page. It appears betwee the header and the content area.');
   t('URL');
-  t('page_title');
 
   return $fields;
 }

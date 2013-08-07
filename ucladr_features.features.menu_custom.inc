@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * basic_site_features.features.menu_custom.inc
+ * ucladr_features.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function basic_site_features_menu_default_menu_custom() {
+function ucladr_features_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: main-menu.

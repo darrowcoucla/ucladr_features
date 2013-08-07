@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * basic_site_features.features.taxonomy.inc
+ * ucladr_features.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function basic_site_features_taxonomy_default_vocabularies() {
+function ucladr_features_taxonomy_default_vocabularies() {
   return array(
     'tags' => array(
       'name' => 'Tags',
