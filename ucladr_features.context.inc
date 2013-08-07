@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * basic_site_features.context.inc
+ * ucladr_features.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function basic_site_features_context_default_contexts() {
+function ucladr_features_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
